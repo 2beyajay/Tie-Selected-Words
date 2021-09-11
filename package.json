@@ -4,6 +4,10 @@
   "description": "Use a span tag with nonbreaking spaces between your selected words so they don't break in different screen sizes",
 	"publisher": "AjayDubey",
   "version": "0.0.1",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/2beyajay/Tie-Selected-Words.git"
+  },
   "engines": {
     "vscode": "^1.60.0"
   },
