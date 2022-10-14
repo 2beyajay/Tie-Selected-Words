@@ -3,7 +3,7 @@
   "displayName": "Tie Selected Words",
   "description": "Use a span tag with nonbreaking spaces between your selected words so they don't break in different screen sizes",
 	"publisher": "AjayDubey",
-  "version": "0.0.1",
+  "version": "1.0.0",
 	"repository": {
     "type": "git",
     "url": "https://github.com/2beyajay/Tie-Selected-Words.git"
