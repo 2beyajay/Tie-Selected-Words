@@ -15,7 +15,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:tie-selected-words.tie"
+    "onCommand:tie-selected-words.tie",
+		"onCommand:tie-selected-words.untie"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -23,6 +24,10 @@
       {
         "command": "tie-selected-words.tie",
         "title": "Tie Selected Words"
+      },
+      {
+        "command": "tie-selected-words.untie",
+        "title": "Untie Selected Words"
       }
     ]
   },
