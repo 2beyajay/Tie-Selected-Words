@@ -33,7 +33,9 @@ function handleTying (selection){
 		let numNbspOccurances = 0 // have to offset the positions by 5 every time whitespace was replaced with &nbsp;
 		
 		if (whatWillGoBack.returningIndex.length == 0) {
-			numNbspOccurances = selection.slice(0, indexPairs[i][0]).match(/\s/g).length
+			if (selection.slice(0, indexPairs[i][0]).match(/\s/g)){ // checking if first thing in the string is a regex HTML tag match
+				numNbspOccurances = selection.slice(0, indexPairs[i][0]).match(/\s/g).length
+			}
 			whatWillGoBack.returningIndex.push(indexPairs[i][0] + (numNbspOccurances*5))
 		} else {
 			numNbspOccurances = selection.slice(indexPairs[i-1][1], indexPairs[i][0]).match(/\s/g).length
