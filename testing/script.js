@@ -1,4 +1,4 @@
-let selection = 'Lorem, ipsum <sup>haha</sup> dolor <sup style="font-size: 9px;">lalala</sup> sit amet<sup style="vertical-align: 6px;">2</sup>this.'
+let selection = 'Lorem ipsum <sup style="font-size: 9px; line-height: 0; vertical-align: 6px;">5</sup>dolor.'
 
 const regex = /<.+?<\/.+?>/g;
 
@@ -46,12 +46,15 @@ for (let i = 0; i < whatWillGoBack.returningIndex.length; i++) {
 	
 	if (htmlTagsReadded.length == 0) {
 		htmlTagsReadded += NBSPd.slice(0,whatWillGoBack.returningIndex[i]) + whatWillGoBack.text[i]
-	} else{
+	} else {
 		htmlTagsReadded += NBSPd.slice(whatWillGoBack.returningIndex[i-1],whatWillGoBack.returningIndex[i]) + whatWillGoBack.text[i]
 	}
 	
 }
 
-htmlTagsReadded += selection.slice(whatWillGoBack.returningIndex[whatWillGoBack.returningIndex.length-1], (selection.length))
+htmlTagsReadded += selection.slice(indexPairs[indexPairs.length-1][1], (selection.length))
 
 let withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${htmlTagsReadded}</span>`
+
+console.log(selection);
+console.log(withNoWrap);
