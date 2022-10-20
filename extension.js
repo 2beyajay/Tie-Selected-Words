@@ -76,10 +76,6 @@ function activate(context) {
 		
 		//getting the selected text
 		let selectedText = editor.document.getText(editor.selection);
-		
-		let NBSPd = selectedText.replace(/ /g,"&nbsp;");
-
-		let withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${NBSPd}</span>`
 
 		editor.edit(editBuilder => {
 			editBuilder.replace(editor.selection, handleTying(selectedText));
