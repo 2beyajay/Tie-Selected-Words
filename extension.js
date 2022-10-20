@@ -10,6 +10,7 @@ function activate(context) {
 
 	let tie = vscode.commands.registerCommand('tie-selected-words.tie', function () {
 		
+		// exiting if nothing is selected
 		var editor = vscode.window.activeTextEditor;
 		if (!editor) {
 				return; 
@@ -34,15 +35,15 @@ function activate(context) {
 	
 	let untie = vscode.commands.registerCommand('tie-selected-words.untie', function () {
 		
+		// exiting if nothing is selected
 		var editor = vscode.window.activeTextEditor;
 		if (!editor) {
-				return; 
+				return;
 		}
 		
 		let selectedText = editor.document.getText(editor.selection);
-		
-		let spanRemoved = selectedText.replace(/<[^>]*>/g,"");
-		let nbspRemoved = spanRemoved.replace(/&nbsp;/g," ");
+		let htmlTagsRemoved = selectedText.replace(/<[^>]*>/g,"");
+		let nbspRemoved = htmlTagsRemoved.replace(/&nbsp;/g," ");
 		
 		editor.edit(editBuilder => {
 			editBuilder.replace(editor.selection, nbspRemoved);
