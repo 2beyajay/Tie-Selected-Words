@@ -55,10 +55,14 @@ function handleTying (selection){
 		
 	}
 
+	let withNoWrap;
 	// adding the final portion of the original selection
-	htmlTagsReadded += selection.slice(indexPairs[indexPairs.length-1][1], (selection.length))
-
-	let withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${htmlTagsReadded}</span>`
+	if (indexPairs.length > 0) {
+		htmlTagsReadded += selection.slice(indexPairs[indexPairs.length-1][1], (selection.length))
+		withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${htmlTagsReadded}</span>`
+	} else {
+		withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${NBSPd}</span>`
+	}
 
 	return withNoWrap
 }

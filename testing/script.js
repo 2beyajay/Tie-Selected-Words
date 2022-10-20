@@ -1,4 +1,4 @@
-let selection = '<br /> Lorem ipsum <br /> <sup style="font-size: 9px; line-height: 0; vertical-align: 6px;">5</sup>dolor.'
+let selection = 'Lorem ipsum'
 const regex = /<.+?\/.*?>/g;
 
 const indexPairs = []; // saving starting and ending index of HTML tags
@@ -47,10 +47,11 @@ for (let i = 0; i < whatWillGoBack.returningIndex.length; i++) {
 	
 }
 
+let withNoWrap;
 // adding the final portion of the original selection
-htmlTagsReadded += selection.slice(indexPairs[indexPairs.length-1][1], (selection.length))
-
-let withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${htmlTagsReadded}</span>`
-
-console.log(selection);
-console.log(withNoWrap);
+if (indexPairs.length > 0) {
+	htmlTagsReadded += selection.slice(indexPairs[indexPairs.length-1][1], (selection.length))
+	withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${htmlTagsReadded}</span>`
+} else {
+	withNoWrap = `<span style="white-space:nowrap; display:inline-block; line-height:1.2em; mso-line-height-alt:0.6em">${NBSPd}</span>`
+}
