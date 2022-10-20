@@ -7,7 +7,7 @@ const vscode = require('vscode');
 
 // FUNCTION TO HANDLE STRING MANIPULATION AND RETURN
 function handleTying (selection){
-	const regex = /<.+?<\/.+?>/g;
+	const regex = /<.+?\/.*?>/g;
 
 	const indexPairs = []; // saving starting and ending index of HTML tags
 	let matchArr;
@@ -70,9 +70,6 @@ function activate(context) {
 		if (!editor) {
 				return; 
 		}
-
-		// Lorem, ipsum dolor sit amet
-		// Lorem, ipsum <sup style="font-size: 9px; line-height: 0; vertical-align: 6px;">5</sup> dolor sit amet
 		
 		//getting the selected text
 		let selectedText = editor.document.getText(editor.selection);
