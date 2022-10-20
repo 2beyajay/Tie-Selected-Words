@@ -5,7 +5,7 @@ Use a span tag with nonbreaking spaces around and between your selected words so
 ## Features
 ![tie](images/tie-selected-words.gif)
 
-## Update 2.1.0 (OCT 2022)
+## Update 2.1.1 (OCT 2022)
 * Added the ability to reverse the tying of words. Select a no-wrap span created by the extension and run the _“untie-selected-words”_ command to untie it. Add your own keyboard shortcut for this command to make it quicker for you.
 * Now the extension will ignore any html tags that might be in your selection.
 
